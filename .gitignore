@@ -1,0 +1,6 @@
+.tscache
+node_modules
+npm-debug.log
+www
+**/.baseDir.ts
+typings

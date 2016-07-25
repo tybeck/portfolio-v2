@@ -1,0 +1,27 @@
+{
+  "globalDependencies": {
+    "async": "registry:dt/async#1.4.2+20160602152629",
+    "body-parser": "registry:dt/body-parser#0.0.0+20160317120654",
+    "config": "registry:dt/config#0.0.0+20160317120654",
+    "express": "registry:dt/express#4.0.0+20160317120654",
+    "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160322035842",
+    "mime": "registry:dt/mime#0.0.0+20160316155526",
+    "mongoose": "registry:dt/mongoose#4.5.4+20160721201159",
+    "mongoose-promise": "registry:dt/mongoose-promise#4.5.4+20160720003345",
+    "node": "registry:dt/node#4.0.0+20160319033040",
+    "q": "registry:dt/q#0.0.0+20160613154756",
+    "serve-static": "registry:dt/serve-static#0.0.0+20160317120654",
+    "winston": "registry:dt/winston#0.0.0+20160417152829"
+  },
+  "resolution": {
+    "main": "typings/main",
+    "browser": "typings/browser"
+  },
+  "dependencies": {
+    "globby": "registry:npm/globby#3.0.0+20160211003958",
+    "lodash": "registry:npm/lodash#4.0.0+20160701205107",
+    "minimist": "registry:npm/minimist#1.0.0+20160229232932",
+    "mongodb": "registry:npm/mongodb#2.1.0+20160721204323",
+    "redis": "registry:npm/redis#0.12.1+20160502170935"
+  }
+}
