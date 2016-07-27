@@ -2,10 +2,10 @@
 
 import * as _redis from 'redis';
 
-let redis: _redis.RedisClient = _redis.createClient({
+let client: _redis.RedisClient = _redis.createClient({
 
   'detect_buffers': true
 
 });
 
-export = redis;
+export = client;

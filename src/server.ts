@@ -8,6 +8,7 @@
 
 'use strict';
 
+import * as ejs from 'ejs';
 import * as bodyParser from 'body-parser';
 import * as express from 'express';
 import * as path from 'path';
@@ -33,6 +34,8 @@ export class Server {
 
   public db: Database;
 
+  public dir: string = __dirname;
+
   constructor () {
 
     if (!server) {
@@ -46,6 +49,12 @@ export class Server {
     }
 
     return this;
+
+  }
+
+  public cwd (): string {
+
+    return this.dir;
 
   }
 
@@ -125,6 +134,8 @@ export class Server {
 
     this.app.set('json spaces', 0);
 
+    this.app.engine('.html', ejs.renderFile);
+
     this.msg('Express - Configuration completed.');
 
     return this;
@@ -153,7 +164,7 @@ export class Server {
 
   }
 
-  public beforeMiddleware () {
+  public beforeMiddleware (): q.Promise<void> {
 
     let deferred: q.Deferred<void> = q.defer<void>(),
 
@@ -174,7 +185,7 @@ export class Server {
 
   }
 
-  public afterMiddleware () {
+  public afterMiddleware (): q.Promise<void> {
 
     let deferred: q.Deferred<void> = q.defer<void>(),
 

@@ -4,3 +4,4 @@ npm-debug.log
 www
 **/.baseDir.ts
 typings
+src/projects/*

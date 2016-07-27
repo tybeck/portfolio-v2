@@ -24,7 +24,7 @@ export default function () {
 
         'name': 'request-error',
 
-        'filename': 'logs/errors.log',
+        'filename': server.cwd() + '/logs/errors.log',
 
         'handleExceptions': true,
 

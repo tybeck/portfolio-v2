@@ -20,6 +20,18 @@ module.exports = {
 
     ]
 
-  }
+  },
+
+  'projects': {
+
+    'expand': true,
+
+    'cwd': '<%= paths.src %>/',
+
+    'dest': '<%= paths.dist %>/',
+
+    'src': 'projects/**/*'
+
+  },
 
 };

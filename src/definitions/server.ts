@@ -14,6 +14,10 @@ export interface Projects extends Object {
 
   setupProjects: Function;
 
+  buildProject: Function;
+
+  getProject: Function;
+
 };
 
 export class Configuration extends Object {

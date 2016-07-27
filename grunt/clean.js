@@ -2,6 +2,8 @@
 
 module.exports = {
 
+  'projects': ['<%= paths.dist %>/projects/'],
+
   'js': {
 
     'files': [
@@ -11,7 +13,8 @@ module.exports = {
         'dot': true,
 
         'src': [
-          '<%= paths.dist %>/**/*.js*'
+          '<%= paths.dist %>/**/*.js*',
+          '!<%= paths.dist %>/projects/**/*.js*'
         ]
 
       }
@@ -29,7 +32,8 @@ module.exports = {
         'dot': true,
 
         'src': [
-          '<%= paths.dist %>/**/.baseDir*.js*'
+          '<%= paths.dist %>/**/.baseDir*.js*',
+          '!<%= paths.dist %>/projects/**/*.js*'
         ]
 
       }

@@ -2,7 +2,7 @@
 
 import { Schema } from 'mongoose';
 
-let schema: Schema = new Schema({
+export const SCHEMA = new Schema({
 
   'name': String,
   'logoLabel': String,
@@ -16,5 +16,3 @@ let schema: Schema = new Schema({
   'carouselView': String
 
 });
-
-export = schema;

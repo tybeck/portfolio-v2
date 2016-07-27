@@ -3,6 +3,7 @@
     "async": "registry:dt/async#1.4.2+20160602152629",
     "body-parser": "registry:dt/body-parser#0.0.0+20160317120654",
     "config": "registry:dt/config#0.0.0+20160317120654",
+    "ejs": "registry:dt/ejs#0.0.0+20160317120654",
     "express": "registry:dt/express#4.0.0+20160317120654",
     "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160322035842",
     "mime": "registry:dt/mime#0.0.0+20160316155526",

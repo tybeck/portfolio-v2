@@ -24,7 +24,7 @@ export default function () {
 
         'name': 'request-success',
 
-        'filename': 'logs/requests.log',
+        'filename': server.cwd() + '/logs/requests.log',
 
         'level': 'info',
 

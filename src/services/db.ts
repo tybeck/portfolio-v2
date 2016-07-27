@@ -3,13 +3,31 @@
 import * as mongoose from 'mongoose';
 import * as q from 'q';
 
+let database: Database;
+
 export class Database {
 
   public connection: mongoose.Connection;
 
   constructor () {
 
+    if (!database) {
+
+      database = this;
+
+    } else {
+
+      return database;
+
+    }
+
     return this;
+
+  }
+
+  public getConnection (): mongoose.Connection {
+
+    return this.connection;
 
   }
 

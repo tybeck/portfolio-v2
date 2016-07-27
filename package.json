@@ -1,6 +1,6 @@
 {
   "name": "tyler-beck-portfolio-v2",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "dependencies": {
     "@angular/common": "2.0.0-rc.4",
     "@angular/compiler": "2.0.0-rc.4",
@@ -19,6 +19,7 @@
     "config": "^1.21.0",
     "core-js": "^2.4.0",
     "cors": "^2.7.1",
+    "ejs": "^2.5.1",
     "express": "^4.14.0",
     "express-winston": "^1.4.2",
     "findit": "^2.0.0",

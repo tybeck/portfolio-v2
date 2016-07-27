@@ -60,21 +60,21 @@ module.exports = function (grunt) {
 
       grunt.initConfig({
 
-          'pkg': grunt.file.readJSON('package.json'),
+        'pkg': grunt.file.readJSON('package.json'),
 
-          'paths' : require('./grunt/paths'),
+        'paths' : require('./grunt/paths'),
 
-          'clean' : require('./grunt/clean'),
+        'clean' : require('./grunt/clean'),
 
-          'tslint': require('./grunt/tslint'),
+        'tslint': require('./grunt/tslint'),
 
-          'ts': require('./grunt/ts'),
+        'ts': require('./grunt/ts'),
 
-          'copy': require('./grunt/copy'),
+        'copy': require('./grunt/copy'),
 
-          'watch': require('./grunt/watch'),
+        'watch': require('./grunt/watch'),
 
-          'bump': require('./grunt/bump')
+        'bump': require('./grunt/bump')
 
       });
 
@@ -155,7 +155,11 @@ module.exports = function (grunt) {
 
         grunt.task.run([
 
+          'clean:projects',
+
           'build',
+
+          'copy:projects',
 
           'watch'
 

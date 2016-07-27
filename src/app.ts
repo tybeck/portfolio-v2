@@ -3,6 +3,7 @@
 import * as http from 'http';
 
 import { Server } from './server';
+import * as Projects from './services/projects';
 import * as time from './utils/current-time';
 
 let server: Server = new Server();
@@ -14,35 +15,43 @@ server
 
       server
         .msg('Mongo - Database connection successful!')
-        .configure()
-        .beforeMiddleware()
+        .configure();
+
+      Projects
+        .setupProjects()
           .then(function () {
 
             server
-              .routes()
+              .beforeMiddleware()
                 .then(function () {
 
                   server
-                    .afterMiddleware()
+                    .routes()
                       .then(function () {
 
                         server
-                          .start()
-                            .then(function (instance: http.Server) {
-
-                              let host: string = instance.address().address,
-
-                                port: number = instance.address().port;
-
-                              if (host === '::') {
-
-                                host = 'localhost';
-
-                              }
+                          .afterMiddleware()
+                            .then(function () {
 
                               server
-                                .msg('Portfolio - Started web server at' + time.default())
-                                .msg('Portfolio - Running on http://' + host + ':' + port);
+                                .start()
+                                  .then(function (instance: http.Server) {
+
+                                    let host: string = instance.address().address,
+
+                                      port: number = instance.address().port;
+
+                                    if (host === '::') {
+
+                                      host = 'localhost';
+
+                                    }
+
+                                    server
+                                      .msg('Portfolio - Started web server at' + time.default())
+                                      .msg('Portfolio - Running on http://' + host + ':' + port);
+
+                                  });
 
                             });
 
@@ -51,6 +60,7 @@ server
                 });
 
           });
+
 
     }, function () {
 
