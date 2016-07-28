@@ -5,3 +5,6 @@ www
 **/.baseDir.ts
 typings
 src/projects/*
+.sass-cache
+data
+tscommand*

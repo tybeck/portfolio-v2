@@ -74,6 +74,12 @@ module.exports = function (grunt) {
 
         'watch': require('./grunt/watch'),
 
+        'pug': require('./grunt/pug'),
+
+        'compass': require('./grunt/compass'),
+
+        'postcss': require('./grunt/postcss'),
+
         'bump': require('./grunt/bump')
 
       });
@@ -155,6 +161,8 @@ module.exports = function (grunt) {
 
         grunt.task.run([
 
+          'logs',
+
           'clean:projects',
 
           'build',
@@ -171,23 +179,105 @@ module.exports = function (grunt) {
 
         grunt.task.run([
 
-          'buildJavaScript'
+          'buildAssets',
+
+          'buildStyles',
+
+          'buildTemplates',
+
+          'buildTypeScript',
+
+          'buildJavaScript:no'
 
         ]);
 
       });
 
-      grunt.registerTask('buildJavaScript', function (target) {
+      grunt.registerTask('logs', 'Creates empty log files', function () {
+
+         grunt.file.write('www/logs/errors.log', '');
+
+         grunt.file.write('www/logs/requests.log', '');
+
+      });
+
+      grunt.registerTask('buildStyles', function () {
 
         grunt.task.run([
 
-          'clean:js',
+          'clean:styles',
+
+          'compass:server',
+
+          'postcss'
+
+        ]);
+
+      });
+
+      grunt.registerTask('buildAssets', function () {
+
+        grunt.task.run([
+
+          'copy:images',
+
+          'copy:fonts'
+
+        ]);
+
+      });
+
+      grunt.registerTask('buildTemplates', function () {
+
+        grunt.task.run([
+
+          'clean:pug',
+
+          'pug'
+
+        ]);
+
+      });
+
+      grunt.registerTask('buildJavaScript', function (clean) {
+
+        var tasks = [];
+
+        if (clean !== 'no') {
+
+          tasks.push('clean:jsWebAppUncompiled');
+
+        }
+
+        tasks.push('copy:js');
+
+        grunt.task.run(tasks);
+
+      });
+
+      grunt.registerTask('buildTypeScript', function () {
+
+        grunt.task.run([
+
+          'buildTypeScriptAppServer',
+
+          'buildTypeScriptWebApp'
+
+        ]);
+
+      });
+
+      grunt.registerTask('buildTypeScriptAppServer', function () {
+
+        grunt.task.run([
+
+          'tslint:checkAppServer',
+
+          'clean:jsAppServerCompiled',
 
           'copy:config',
 
-          'tslintJavaScript',
-
-          'compileJavaScript',
+          'ts:compileAppServer',
 
           'clean:jsBaseDirs'
 
@@ -195,23 +285,13 @@ module.exports = function (grunt) {
 
       });
 
-      grunt.registerTask('tslintJavaScript', function (target) {
+      grunt.registerTask('buildTypeScriptWebApp', function () {
 
         grunt.task.run([
 
-          'tslint:checkAppServer',
+          'tslint:checkWebApp',
 
-          'tslint:checkWebApp'
-
-        ]);
-
-      });
-
-      grunt.registerTask('compileJavaScript', function () {
-
-        grunt.task.run([
-
-          'ts:compileAppServer',
+          'clean:jsWebApp',
 
           'ts:compileWebApp'
 
@@ -223,7 +303,7 @@ module.exports = function (grunt) {
 
         var msg = grunt.option('m');
 
-        if(msg) {
+        if (msg) {
 
           grunt.config.merge({
 

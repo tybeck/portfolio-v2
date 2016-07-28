@@ -4,6 +4,8 @@ module.exports = {
 
   'dist': 'www',
 
+  'distApp': 'www/app',
+
   'src': 'src',
 
   'app': 'src/app',

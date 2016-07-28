@@ -4,6 +4,20 @@ module.exports = {
 
   'compileAppServer': {
 
+    'options': {
+
+      'sourceMap': true,
+
+      'emitDecoratorMetadata': true,
+
+      'experimentalDecorators': true,
+
+      'removeComments': false,
+
+      'noImplicitAny': false
+
+    },
+
     'files': [{
 
       'src': [
@@ -16,11 +30,7 @@ module.exports = {
 
       'options': {
 
-        'fast': 'never',
-
-        'module': 'commonjs',
-
-        'target': 'es6'
+        'fast': 'never'
 
       }
 
@@ -30,22 +40,32 @@ module.exports = {
 
   'compileWebApp': {
 
+    'options': {
+
+      'sourceMap': true,
+
+      'emitDecoratorMetadata': true,
+
+      'experimentalDecorators': true,
+
+      'removeComments': false,
+
+      'noImplicitAny': false
+
+    },
+
     'files': [{
 
       'src': [
         '<%= paths.app %>/**/*.ts',
-        '!<%= paths.app %>/**/*.d.ts'
+        '!node_modules/**'
       ],
 
-      'dest': '<%= paths.dist %>/<%= paths.scripts %>/app.js',
+      'dest': '<%= paths.distApp %>/<%= paths.scripts %>/.',
 
       'options': {
 
-        'fast': 'never',
-
-        'target': 'es6',
-
-        'module': 'commonjs'
+        'fast': 'never'
 
       }
 

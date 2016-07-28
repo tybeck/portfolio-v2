@@ -64,7 +64,7 @@ export class Server {
    * @type Function
    */
 
-  public msg (msg: string) {
+  public msg (msg: string): Server {
 
     console.log(chalk.bgWhite(chalk.blue('## ') + chalk.black('Tyler+Beck') +
 
@@ -74,7 +74,7 @@ export class Server {
 
   }
 
-  public ascii () {
+  public ascii (): Server {
 
     this
       .msg('              ,\'##\':              ')
@@ -122,11 +122,11 @@ export class Server {
    * @type Function
    */
 
-  public configure () {
+  public configure (): Server {
 
     this.app = express();
 
-    this.app.use(express.static(__dirname + '/www/'));
+    this.statics();
 
     this.app.use(bodyParser.json());
 
@@ -137,6 +137,34 @@ export class Server {
     this.app.engine('.html', ejs.renderFile);
 
     this.msg('Express - Configuration completed.');
+
+    return this;
+
+  }
+
+  public statics (): void {
+
+    console.log(this.cwd() + '/app/scripts');
+
+    this
+      .stat(this.cwd() + '/www/')
+      .stat('/modules', this.cwd() + '/../node_modules')
+      .stat('/scripts', this.cwd() + '/app/scripts')
+      .stat('/styles', this.cwd() + '/app/styles');
+
+  }
+
+  public stat (pathx: string, pathy?: string): Server {
+
+    if (pathy && pathy.length) {
+
+      this.app.use(pathx, express.static(pathy));
+
+    } else {
+
+      this.app.use(express.static(pathx));
+
+    }
 
     return this;
 
@@ -206,7 +234,7 @@ export class Server {
 
   }
 
-  public routes () {
+  public routes (): q.Promise<void> {
 
     let deferred: q.Deferred<void> = q.defer<void>(),
 
@@ -233,7 +261,7 @@ export class Server {
    * @type Function
    */
 
-  public getApp () {
+  public getApp (): express.Application {
 
     return this.app;
 

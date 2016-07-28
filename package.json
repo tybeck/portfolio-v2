@@ -1,6 +1,6 @@
 {
   "name": "tyler-beck-portfolio-v2",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "dependencies": {
     "@angular/common": "2.0.0-rc.4",
     "@angular/compiler": "2.0.0-rc.4",
@@ -47,6 +47,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-pug": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
     "grunt-ts": "^6.0.0-beta.2",
     "grunt-tslint": "^3.1.1",
     "jit-grunt": "^0.10.0",
@@ -61,8 +62,6 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-    "lite": "lite-server",
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",

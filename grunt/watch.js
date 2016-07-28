@@ -2,15 +2,81 @@
 
 module.exports = {
 
+  'tsServerApp': {
+
+    'files': [
+      '<%= paths.src %>/**/*.ts',
+      '!<%= paths.app %>/**/*.ts'
+    ],
+
+    'tasks': [
+      'buildTypeScriptAppServer'
+    ]
+
+  },
+
+  'tsWebApp': {
+
+    'files': [
+      '<%= paths.app %>/**/*.ts'
+    ],
+
+    'tasks': [
+      'buildTypeScriptWebApp',
+      'buildJavaScript:no'
+    ]
+
+  },
+
   'js': {
 
     'files': [
-      '<%= paths.src %>/**/*.ts'
+      '<%= paths.app %>/<%= paths.scripts %>/**/*.js'
     ],
 
-    'tasks': ['buildJavaScript']
+    'tasks': [
+      'buildTypeScriptWebApp',
+      'buildJavaScript:no'
+    ]
+
+  },
+
+  'pug': {
+
+    'files': [
+      '<%= paths.src %>/**/*.pug'
+    ],
+
+    'tasks': [
+      'buildAssets',
+      'buildTemplates'
+    ],
+
+    'options' : {
+
+      'livereload' : true
+
+    }
+
+  },
+
+  'compass': {
+
+    'files': [
+      '<%= paths.app %>/<%= paths.styles %>/**/*.{scss,sass}'
+    ],
+
+    'tasks': [
+      'buildAssets',
+      'buildStyles'
+    ],
+
+    'options' : {
+
+      'livereload' : true
+
+    }
 
   }
 
-}
-;
+};
