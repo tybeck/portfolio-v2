@@ -24,7 +24,14 @@ import * as before from './middleware/before';
 import * as after from './middleware/after';
 import * as routes from './routes';
 
-import { Configuration, EnvironmentParsedArgs } from './definitions/server';
+import {
+  Configuration,
+  EnvironmentParsedArgs,
+  MODULES_PATH,
+  SCRIPTS_PATH,
+  STYLES_PATH,
+  VIEWS_PATH
+} from './definitions/server';
 
 let server: Server;
 
@@ -144,13 +151,12 @@ export class Server {
 
   public statics (): void {
 
-    console.log(this.cwd() + '/app/scripts');
-
     this
       .stat(this.cwd() + '/www/')
-      .stat('/modules', this.cwd() + '/../node_modules')
-      .stat('/scripts', this.cwd() + '/app/scripts')
-      .stat('/styles', this.cwd() + '/app/styles');
+      .stat('/modules', this.cwd() + MODULES_PATH)
+      .stat('/scripts', this.cwd() + SCRIPTS_PATH)
+      .stat('/styles', this.cwd() + STYLES_PATH)
+      .stat('/views', this.cwd() + VIEWS_PATH);
 
   }
 
