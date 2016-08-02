@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { SkillComponent } from '../skill.component';
+
 @Component({
 
   'selector': 'home',
 
-  'templateUrl': 'views/components/home.html'
+  'templateUrl': 'views/components/pages/home.html',
+
+  'directives': [
+    SkillComponent
+  ]
 
 })
 
@@ -21,4 +27,4 @@ export class HomeComponent implements OnInit {
 
   }
 
-}
+};

@@ -6,8 +6,6 @@ module.exports = {
 
       'sassDir': '<%= paths.app %>/<%= paths.styles %>',
 
-      'specify': '<%= paths.app %>/<%= paths.styles %>/app.scss',
-
       'cssDir': '<%= paths.distApp %>/<%= paths.styles %>',
 
       'imagesDir': '<%= paths.distApp %>/<%= paths.images %>',
@@ -24,7 +22,9 @@ module.exports = {
 
       'assetCacheBuster': false,
 
-      'raw': 'Sass::Script::Number.precision = 10\n'
+      'raw': 'Sass::Script::Number.precision = 10\n',
+
+      'outputStyle': 'expanded'
 
   },
 

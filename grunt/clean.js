@@ -2,7 +2,9 @@
 
 module.exports = {
 
-  'projects': ['<%= paths.dist %>/projects/'],
+  'projects': [
+    '<%= paths.dist %>/projects/'
+  ],
 
   'styles': {
 
@@ -13,7 +15,8 @@ module.exports = {
         'dot': true,
 
         'src': [
-          '<%= paths.distApp %>/<%= paths.styles %>/*'
+          '<%= paths.distApp %>/<%= paths.styles %>/*',
+          '!<%= paths.distApp %>/<%= paths.styles %>/fonts/'
         ]
 
       }

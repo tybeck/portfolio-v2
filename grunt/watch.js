@@ -67,8 +67,8 @@ module.exports = {
     ],
 
     'tasks': [
-      'buildAssets',
-      'buildStyles'
+      'buildStyles',
+      'buildAssets'
     ],
 
     'options' : {

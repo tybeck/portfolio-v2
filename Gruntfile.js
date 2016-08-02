@@ -179,15 +179,15 @@ module.exports = function (grunt) {
 
         grunt.task.run([
 
-          'buildAssets',
-
-          'buildStyles',
-
           'buildTemplates',
 
           'buildTypeScript',
 
-          'buildJavaScript:no'
+          'buildJavaScript:no',
+
+          'buildStyles',
+
+          'buildAssets'
 
         ]);
 

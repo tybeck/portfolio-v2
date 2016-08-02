@@ -11,10 +11,28 @@ import { ROUTER_DIRECTIVES }  from '@angular/router';
 
   'directives': [
     ROUTER_DIRECTIVES
+  ],
+
+  'providers': [
+
+    {
+
+      'provide': Window,
+
+      'useValue': window
+
+    }, {
+
+      'provide': Document,
+
+      'useValue': document
+
+    }
+
   ]
 
 })
 
 export class AppComponent {
 
-}
+};

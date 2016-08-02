@@ -20,6 +20,8 @@ module.exports = {
 
   'docs': 'docs',
 
-  'config': 'config'
+  'config': 'config',
+
+  'fonts': 'fonts'
 
 };

@@ -62,11 +62,13 @@ module.exports = {
 
         'expand': true,
 
-        'cwd': '<%= paths.app %>/<%= paths.styles %>/fonts/',
+        'dot': true,
 
-        'dest': '<%= paths.distApp %>/<%= paths.styles %>/fonts/',
+        'cwd': '<%= paths.app %>/<%= paths.styles %>/<%= paths.fonts %>/',
 
-        'src': '{,*/}*.*'
+        'dest': '<%= paths.distApp %>/<%= paths.styles %>/<%= paths.fonts %>/',
+
+        'src': '{,*/}*.{eot,svg,ttf,woff,woff2}'
 
       }
 

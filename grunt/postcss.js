@@ -20,7 +20,7 @@ module.exports = {
 
   'dist': {
 
-    'src': '<%= paths.distApp %>/<%= paths.styles %>/*.css'
+    'src': '<%= paths.distApp %>/<%= paths.styles %>/**/*.css'
 
   }
 
