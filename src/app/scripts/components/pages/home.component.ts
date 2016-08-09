@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { SkillComponent } from '../skill.component';
@@ -15,16 +15,10 @@ import { SkillComponent } from '../skill.component';
 
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   constructor(
     private router: Router) {
-  }
-
-  ngOnInit() {
-
-    console.log('okay init');
-
   }
 
 };

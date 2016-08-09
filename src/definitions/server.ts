@@ -2,12 +2,14 @@
 
 import * as minimist from 'minimist';
 
-export const MODULES_PATH: string = '/../node_modules';
-export const SCRIPTS_PATH: string = '/app/scripts';
-export const STYLES_PATH: string = '/app/styles';
-export const VIEWS_PATH: string = '/app/views';
+export const MAPPINGS_PATH: string = <string>'/../src/app/scripts';
+export const MODULES_PATH: string = <string>'/../node_modules';
+export const SCRIPTS_PATH: string = <string>'/app/scripts';
+export const STYLES_PATH: string = <string>'/app/styles';
+export const VIEWS_PATH: string = <string>'/app/views';
+export const IMAGES_PATH: string = <string>'/app/images';
 
-export const LOCATIONS: string[] = [
+export const LOCATIONS: string[] = <string[]>[
   '/',
   '/home',
   '/about',

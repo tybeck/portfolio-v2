@@ -3,6 +3,9 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES }  from '@angular/router';
 
+import { LoadingComponent } from './loading.component';
+import { AppHeaderComponent } from './app-header.component';
+
 @Component({
 
   'selector': 'app',
@@ -10,25 +13,9 @@ import { ROUTER_DIRECTIVES }  from '@angular/router';
   'templateUrl': 'views/components/app.html',
 
   'directives': [
-    ROUTER_DIRECTIVES
-  ],
-
-  'providers': [
-
-    {
-
-      'provide': Window,
-
-      'useValue': window
-
-    }, {
-
-      'provide': Document,
-
-      'useValue': document
-
-    }
-
+    ROUTER_DIRECTIVES,
+    LoadingComponent,
+    AppHeaderComponent
   ]
 
 })

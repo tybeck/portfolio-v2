@@ -1,7 +1,8 @@
 div(class="skill-component", #container="")
-  span JavaScript
+  span([innerText]="type")
   div(class="progress-container")
     div(
       class="progress-bar",
       [ngStyle]="{ 'background-color': color, width: lvl }"
     )
+      span([innerText]="lvl")

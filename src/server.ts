@@ -27,10 +27,12 @@ import * as routes from './routes';
 import {
   Configuration,
   EnvironmentParsedArgs,
+  MAPPINGS_PATH,
   MODULES_PATH,
   SCRIPTS_PATH,
   STYLES_PATH,
-  VIEWS_PATH
+  VIEWS_PATH,
+  IMAGES_PATH
 } from './definitions/server';
 
 let server: Server;
@@ -153,6 +155,8 @@ export class Server {
 
     this
       .stat(this.cwd() + '/www/')
+      .stat('/src/app/scripts', this.cwd() + MAPPINGS_PATH)
+      .stat('/images', this.cwd() + IMAGES_PATH)
       .stat('/modules', this.cwd() + MODULES_PATH)
       .stat('/scripts', this.cwd() + SCRIPTS_PATH)
       .stat('/styles', this.cwd() + STYLES_PATH)

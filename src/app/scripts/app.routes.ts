@@ -1,6 +1,9 @@
 'use strict';
 
-import { provideRouter, RouterConfig }  from '@angular/router';
+import {
+  provideRouter,
+  RouterConfig
+} from '@angular/router';
 
 import { HomeComponent } from './components/pages/home.component';
 import { AboutComponent } from './components/pages/about.component';
@@ -8,7 +11,13 @@ import { PortfolioComponent } from './components/pages/portfolio.component';
 import { ClientsComponent } from './components/pages/clients.component';
 import { ContactComponent } from './components/pages/contact.component';
 
-const ROUTES: RouterConfig = [
+import { CanActivateViaAssetsGuard } from './guards/assets.guards';
+
+const GUARDS: any[] = <any[]>[
+  CanActivateViaAssetsGuard
+];
+
+let appRoutes: any[] = <any[]>[
   {
 
     'path': '',
@@ -54,6 +63,18 @@ const ROUTES: RouterConfig = [
 
   }
 ];
+
+appRoutes.forEach(function (route: any) {
+
+  if (route && route.path) {
+
+    route.canActivate = GUARDS;
+
+  }
+
+});
+
+const ROUTES: RouterConfig = appRoutes;
 
 export const appRouterProviders = [
 

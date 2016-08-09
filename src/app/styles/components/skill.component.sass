@@ -1,13 +1,17 @@
+@import ../mixins/font
+
 .skill-component
 
-  font-family: 'roboto_condensedbold'
-  font-style: normal
-  font-weight: normal
+  @include robo-bold
+
+  text-transform: uppercase
+  letter-spacing: 0.5px
+  font-size: 14px
 
   > span
 
     display: block
-    margin-bottom: 1.5rem
+    margin-bottom: 12px
     margin-left: 2.5%
 
   .progress-container
@@ -22,9 +26,20 @@
     .progress-bar
       height: 2.5rem
       background-color: #213f9a
-      -ms-transition: all 1.2s ease
-      -webkit-transition: all 1.2s ease
-      -moz-transition: all 1.2s ease
-      -o-transition: all 1.2s ease
-      transition: all 1.2s ease
+      -ms-transition: width 1.2s ease
+      -webkit-transition: width 1.2s ease
+      -moz-transition: width 1.2s ease
+      -o-transition: width 1.2s ease
+      transition: width 1.2s ease
+      position: relative
       width: 0%
+
+      > span
+
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translateX(-50%) translateY(-50%)
+        font-size: 16px
+        letter-spacing: 1.75px
+        opacity: 1.75px
