@@ -1,0 +1,52 @@
+@import ../../mixins/font
+
+\:host
+
+  display: inline-block
+  cursor: pointer
+
+  a
+
+    @include robo-regular
+
+    display: block
+    border: 1px solid #000
+    border-radius: 9px
+    color: #000
+    letter-spacing: 2px
+    text-transform: uppercase
+    font-size: 15px
+    padding: 15px
+    -ms-transition: color 1.2s ease
+    -webkit-transition: color 1.2s ease
+    -moz-transition: color 1.2s ease
+    -o-transition: color 1.2s ease
+    transition: color 1.2s ease
+
+    &:hover
+      text-decoration: none
+      color: #213f9a
+
+@media only screen and (min-width : 400px)
+
+  \:host
+
+    a
+
+      font-size: 19px
+      padding-right: 21px
+      padding-left: 21px
+      padding-bottom: 17px
+      padding-top: 17px
+
+@media only screen and (min-width : 480px)
+
+  \:host
+
+    a
+
+      font-size: 24px
+      padding-right: 25px
+      padding-left: 25px
+      padding-bottom: 21px
+      padding-top: 21px
