@@ -1,6 +1,79 @@
-div
-  div hi
-  skill(
-    level=95,
-    type="JavaScript"
+div(class="app-home")
+  h2
+    span About
+    strong Me
+  p
+    | I’m a software engineer with a passion to create. I develop anything from desktop, web, to
+    | mobile applications and love using innovative technologies. I’m a full stack developer with
+    | experience across many spectrums of development.
+  common-button(
+    class="about",
+    text="More About Me",
+    navigate="/about"
+  )
+  div(class="app-skills clearfix")
+    skill(
+      level=100,
+      type="JavaScript"
+    )
+    skill(
+      level=100,
+      type="Node.JS"
+    )
+    skill(
+      level=85,
+      type="TypeScript"
+    )
+    skill(
+      level=100,
+      type="HTML"
+    )
+    skill(
+      level=95,
+      type="ActionScript"
+    )
+    skill(
+      level=100,
+      type="CSS"
+    )
+    skill(
+      level=75,
+      type="Java",
+      [hideUntil]="showOtherSkills"
+    )
+    skill(
+      level=85,
+      type="Shell",
+      [hideUntil]="showOtherSkills"
+    )
+    skill(
+      level=65,
+      type="PHP",
+      [hideUntil]="showOtherSkills"
+    )
+    skill(
+      level=95,
+      type="Grunt | Gulp Automation",
+      [hideUntil]="showOtherSkills"
+    )
+    skill(
+      level=85,
+      type="Web | Mobile Development",
+      [hideUntil]="showOtherSkills"
+    )
+    skill(
+      level=75,
+      type="E-commerce Systems",
+      [hideUntil]="showOtherSkills"
+    )
+    a(
+      class="app-see-more-link",
+      (click)="showAllSkills()",
+      *ngIf="!showOtherSkills"
+    ) See More...
+  common-button(
+    class="portfolio",
+    text="Portfolio",
+    navigate="/portfolio",
+    [ngClass]="{ 'other-skills': showOtherSkills }"
   )

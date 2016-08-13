@@ -1,8 +1,8 @@
 'use strict';
 
 import {
-  provideRouter,
-  RouterConfig
+  Routes,
+  RouterModule
 } from '@angular/router';
 
 import { HomeComponent } from './components/pages/home.component';
@@ -17,7 +17,7 @@ const GUARDS: any[] = <any[]>[
   CanActivateViaAssetsGuard
 ];
 
-let appRoutes: any[] = <any[]>[
+let appRoutes: Routes = <Routes>[
   {
 
     'path': '',
@@ -74,10 +74,4 @@ appRoutes.forEach(function (route: any) {
 
 });
 
-const ROUTES: RouterConfig = appRoutes;
-
-export const appRouterProviders = [
-
-  provideRouter(ROUTES)
-
-];
+export const ROUTING = RouterModule.forRoot(appRoutes);

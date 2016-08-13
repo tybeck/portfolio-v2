@@ -1,12 +1,8 @@
 'use strict';
 
-import { bootstrap } from '@angular/platform-browser-dynamic';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { CanActivateViaAssetsGuard } from './guards/assets.guards';
-
-import { AppComponent } from './components/app.component';
-import { AssetsService } from './services/assets.service';
-import { appRouterProviders } from './app.routes';
+import { AppModule } from './app.module';
 
 let bootstrapper: Bootstrapper;
 
@@ -30,24 +26,8 @@ export class Bootstrapper {
 
   public compile () {
 
-    bootstrap(AppComponent, [
-      {
-
-        'provide': Window,
-
-        'useValue': window
-
-      }, {
-
-        'provide': Document,
-
-        'useValue': document
-
-      },
-      AssetsService,
-      CanActivateViaAssetsGuard,
-      appRouterProviders
-    ]);
+    platformBrowserDynamic()
+      .bootstrapModule(AppModule);
 
     return this;
 

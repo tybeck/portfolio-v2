@@ -10,9 +10,23 @@ import {
 
 import { NgStyle } from '@angular/common';
 
+import {
+  HideUntilDirective
+} from '../directives/hide-until.directive';
+
+import {
+  BoolEventEmitterService
+} from '../services/bool-emitter.service';
+
+import {
+  Rect
+} from '../definitions/generic';
+
+let selector: string = <string>'skill';
+
 @Component({
 
-  'selector': 'skill',
+  'selector': selector,
 
   'templateUrl': 'views/components/skill.html',
 
@@ -23,7 +37,12 @@ import { NgStyle } from '@angular/common';
   ],
 
   'directives': [
+    HideUntilDirective,
     NgStyle
+  ],
+
+  'providers': [
+    BoolEventEmitterService
   ]
 
 })
@@ -38,6 +57,9 @@ export class SkillComponent implements OnInit {
   private hasAnimated: boolean = false;
   private color: string = '#213f9a';
   private lvl: string = '0%';
+
+  private classesAvailable: string = '';
+  private classes: string[] = ['skill-component'];
 
   private elem: HTMLElement;
 
@@ -54,17 +76,45 @@ export class SkillComponent implements OnInit {
 
   };
 
+  private subscription = null;
+
   constructor (
     private window: Window,
-    private document: Document) {
+    private document: Document,
+    private emitter: BoolEventEmitterService) {
 
   }
 
   ngOnInit () {
 
+    let self: SkillComponent = <SkillComponent>this;
+
+    this.classesAvailable = this
+      .classes
+      .join(' ');
+
     this
       .getElement()
       .getColorForType();
+
+    this.subscription = this
+      .emitter
+      .stream
+      .subscribe(function (response: boolean) {
+
+        if (response) {
+
+          setTimeout(() => {
+
+            self
+              .checkView
+              .apply(self);
+
+          }, 250);
+
+        }
+
+      });
 
   }
 
@@ -76,9 +126,9 @@ export class SkillComponent implements OnInit {
 
   }
 
-  private isElementInViewport (el: HTMLElement) {
+  private isElementInViewport (el: HTMLElement): boolean {
 
-    var rect = el.getBoundingClientRect();
+    let rect: Rect = <Rect>el.getBoundingClientRect();
 
     return (
       rect.top >= 0 &&
@@ -91,7 +141,37 @@ export class SkillComponent implements OnInit {
 
   private checkView (): SkillComponent {
 
-    if (this.isElementInViewport(this.elem) && !this.hasAnimated) {
+    let isHidden: boolean = <boolean>false;
+
+    if (this.elem && this.elem.parentNode) {
+
+      let parentElem: HTMLElement = <HTMLElement>this.elem.parentNode,
+
+        parentNodeName: string = <string>this.elem.parentNode.nodeName;
+
+      if (parentNodeName) {
+
+        parentNodeName = parentNodeName.toLowerCase();
+
+        if (selector === parentNodeName) {
+
+          let h: number = <number>parseInt(this.window
+            .getComputedStyle(parentElem, null)
+            .getPropertyValue('height'));
+
+          if (!h) {
+
+            isHidden = true;
+
+          }
+
+        }
+
+      }
+
+    }
+
+    if (this.isElementInViewport(this.elem) && !this.hasAnimated && !isHidden) {
 
       Object.assign(this, {
 
@@ -121,6 +201,8 @@ export class SkillComponent implements OnInit {
 
   private getColorForType (): SkillComponent {
 
+    let self: SkillComponent = <SkillComponent>this;
+
     if (this.type && this.type.length) {
 
       let type: string = this.type.toLowerCase(),
@@ -129,20 +211,28 @@ export class SkillComponent implements OnInit {
 
       if (color) {
 
+        this.classes.push(type.toLowerCase());
+
         Object.assign(this, {
 
           'color': color,
 
           'lvl': '0%',
 
-          'hasAnimated': false
+          'hasAnimated': false,
+
+          'classesAvailable': this.classes.join(' ')
 
         });
 
-        this
+      }
+
+      setTimeout(function () {
+
+        self
           .checkView();
 
-      }
+      }, 25);
 
     }
 

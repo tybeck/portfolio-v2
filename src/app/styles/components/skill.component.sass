@@ -1,6 +1,20 @@
 @import ../mixins/font
+@import ../mixins/language-colors
+
+\:host
+  -ms-transition: height 1.2s ease
+  -webkit-transition: height 1.2s ease
+  -moz-transition: height 1.2s ease
+  -o-transition: height 1.2s ease
+  transition: height 1.2s ease
 
 .skill-component
+
+  &.javascript
+    .progress-container
+      .progress-bar
+        > span
+          @include javascript
 
   @include robo-bold
 
@@ -13,6 +27,7 @@
     display: block
     margin-bottom: 12px
     margin-left: 2.5%
+    text-align: left
 
   .progress-container
 

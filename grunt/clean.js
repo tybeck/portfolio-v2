@@ -2,6 +2,10 @@
 
 module.exports = {
 
+  'files': [
+    'tscommand*.tmp.txt'
+  ],
+
   'projects': [
     '<%= paths.dist %>/projects/'
   ],

@@ -1,10 +1,10 @@
 'use strict';
 
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES }  from '@angular/router';
 
 import { LoadingComponent } from './loading.component';
 import { AppHeaderComponent } from './app-header.component';
+import { AppRouterComponent } from './app-router.component';
 
 @Component({
 
@@ -13,9 +13,9 @@ import { AppHeaderComponent } from './app-header.component';
   'templateUrl': 'views/components/app.html',
 
   'directives': [
-    ROUTER_DIRECTIVES,
     LoadingComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
+    AppRouterComponent
   ]
 
 })
