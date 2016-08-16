@@ -1,4 +1,11 @@
-div(class="app")
+div.app
   loading
   app-header
-  app-router
+  div(
+    class="app-hero-section",
+    appResize
+  )
+    router-outlet(name="hero")
+  app-router(
+      id="content-view"
+  )

@@ -6,6 +6,8 @@ import { LoadingComponent } from './loading.component';
 import { AppHeaderComponent } from './app-header.component';
 import { AppRouterComponent } from './app-router.component';
 
+import { AppResizeDirective } from '../directives/app-resize.directive';
+
 @Component({
 
   'selector': 'app',
@@ -15,7 +17,14 @@ import { AppRouterComponent } from './app-router.component';
   'directives': [
     LoadingComponent,
     AppHeaderComponent,
-    AppRouterComponent
+    AppRouterComponent,
+    AppResizeDirective
+  ],
+
+  'styleUrls': [
+
+    'styles/app/components/app.component.css'
+
   ]
 
 })

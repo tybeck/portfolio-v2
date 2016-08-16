@@ -4,9 +4,9 @@ module.exports = {
 
   'options': {
 
-      'sassDir': '<%= paths.app %>/<%= paths.styles %>',
+      'sassDir': '<%= paths.app %>/<%= paths.styles %>/',
 
-      'cssDir': '<%= paths.distApp %>/<%= paths.styles %>',
+      'cssDir': '<%= paths.distApp %>/<%= paths.styles %>/',
 
       'imagesDir': '<%= paths.distApp %>/<%= paths.images %>',
 
@@ -21,8 +21,6 @@ module.exports = {
       'relativeAssets': false,
 
       'assetCacheBuster': false,
-
-      'raw': 'Sass::Script::Number.precision = 10\n',
 
       'outputStyle': 'expanded'
 

@@ -1,0 +1,119 @@
+@import ../../mixins/font
+
+\:host
+  -webkit-background-size: cover
+  background-size: cover
+  background-position: center center
+  background-image: url('/images/bg-showcase.png')
+  text-align: center
+  position: relative
+  height: 100%
+  top: 0
+  display: block
+
+  > div
+
+    position: absolute
+    margin: 0
+    top: 50%
+    transform: translate(0, -50%)
+    width: 100%
+
+    h1
+      margin: 0
+      padding: 0
+      @include robo-bold
+      text-transform: uppercase
+      color: #FFF
+      font-size: 48px
+
+      &:first-child
+
+        span.logo
+          height: 122px
+          display: block
+          text-align: center
+          width: 127px
+          left: 50%
+          background: url('/images/sprite.png') 0 0/555px no-repeat
+          background-repeat: no-repeat
+          background-position: 4px -25px
+          margin-right: auto
+          margin-left: auto
+          margin-bottom: 15px
+
+        span.name
+          font-weight: normal
+          @include robo-light
+          display: block
+          margin-top: 5px
+
+    h2
+
+      color: #FFF
+      @include robo-light
+      font-size: 24px
+
+      span
+
+        color: rgb(169, 186, 237)
+
+    a.app-hero-scroll-down
+      display: block
+      width: 94px
+      margin-left: auto
+      height: 91px
+      margin-right: auto
+      text-align: center
+      margin-top: 25px
+      background: url('/images/sprite.png') 0 -192px no-repeat
+      background-repeat: no-repeat
+      background-position: 0 -192px
+      cursor: pointer
+
+@media only screen and (min-width: 375px)
+
+  \:host
+
+    > div
+
+      h1
+        font-size: 55px
+
+        &:first-child
+
+          span.logo
+            height: 162px
+            width: 167px
+            background: url('/images/sprite.png') 0 0/725px no-repeat
+            background-position: 5px -31px
+
+      h2
+        font-size: 26px
+
+      a.app-hero-scroll-down
+        margin-top: 35px
+
+@media only screen and (min-width: 480px)
+
+  \:host
+
+    > div
+
+      h1
+        font-size: 65px
+
+        &:first-child
+
+          span.logo
+            height: 182px
+            width: 187px
+            background: url('/images/sprite.png') 0 0/815px no-repeat
+            background-position: 5px -35px
+            margin-bottom: 25px
+
+      h2
+        font-size: 27px
+
+      a.app-hero-scroll-down
+        margin-top: 40px

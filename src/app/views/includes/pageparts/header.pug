@@ -1,20 +1,15 @@
-div(class="tyb-site-header-container")
-  header(class="container")
-    div(class="row")
-      div(class="column")
-        a(class="tyb-site-news")
-          span 3
-          span News
-      div(class="column")
-        nav
-          ul
-            li(class="tyb-home-link")
-              a(routerLink="/home") Home
-            li(class="tyb-about-me-link")
-              a(routerLink="/about") About Me
-            li(class="tyb-portfolio-link")
-              a(routerLink="/portfolio") Portfolio
-            li(class="tyb-clients-link")
-              a(routerLink="/clients") Clients
-            li(class="tyb-contact-me-link")
-              a(routerLink="/contact") Contact Me
+div.tyb-site-header-container
+  header.clearfix
+    a.tyb-site-news.fa.fa-bars
+    nav
+      ul.clearfix
+        li(class="tyb-home-link")
+          a(routerLink="/home") Home
+        li(class="tyb-about-me-link")
+          a(routerLink="/about") About
+        li(class="tyb-portfolio-link")
+          a(routerLink="/portfolio") Portfolio
+        li(class="tyb-clients-link")
+          a(routerLink="/clients") Clients
+        li(class="tyb-contact-me-link")
+          a(routerLink="/contact") Contact

@@ -16,8 +16,13 @@ import { PortfolioComponent } from './components/pages/portfolio.component';
 import { ClientsComponent } from './components/pages/clients.component';
 import { ContactComponent } from './components/pages/contact.component';
 
+import { AppHeroHomeComponent } from './components/pages/aux/app-hero-home.component';
+
 import { AssetsService } from './services/assets.service';
-import { ROUTING } from './app.routes';
+
+import {
+  ROUTING
+} from './app.routes';
 
 @NgModule({
 
@@ -34,7 +39,8 @@ import { ROUTING } from './app.routes';
     AboutComponent,
     PortfolioComponent,
     ClientsComponent,
-    ContactComponent
+    ContactComponent,
+    AppHeroHomeComponent
   ],
 
   'providers': [
