@@ -1,4 +1,6 @@
 @import ../../mixins/font
+@import ../../mixins/generic
+@import ../../variables
 
 \:host
   -webkit-background-size: cover
@@ -13,10 +15,7 @@
 
   > div
 
-    position: absolute
-    margin: 0
-    top: 50%
-    transform: translate(0, -50%)
+    @include center-middle
     width: 100%
 
     h1
@@ -71,7 +70,7 @@
       background-position: 0 -192px
       cursor: pointer
 
-@media only screen and (min-width: 375px)
+@media only screen and (min-width: $viewport-small-xx)
 
   \:host
 
@@ -94,7 +93,7 @@
       a.app-hero-scroll-down
         margin-top: 35px
 
-@media only screen and (min-width: 480px)
+@media only screen and (min-width: $viewport-medium-xxx)
 
   \:host
 
@@ -117,3 +116,83 @@
 
       a.app-hero-scroll-down
         margin-top: 40px
+
+@media only screen and (min-width: $viewport-medium-xx)
+
+  \:host
+
+    > div
+
+      h1
+        font-size: 86px
+        letter-spacing: 3px
+
+        &:first-child
+
+          span.logo
+            height: 202px
+            width: 207px
+            background: url('/images/sprite.png') 0 0/910px no-repeat
+            background-position: 5px -38px
+            margin-bottom: 25px
+
+      h2
+        font-size: 29px
+
+      a.app-hero-scroll-down
+        margin-top: 40px
+
+@media only screen and (min-width: $viewport-medium-x)
+
+  \:host
+
+    > div
+
+      h1
+        font-size: 90px
+        letter-spacing: 8px
+
+      h2
+        font-size: 30px
+
+@media only screen and (min-width: $viewport-large)
+
+  \:host
+
+    > div
+
+      h1
+        font-size: 97px
+        letter-spacing: 10px
+
+      &:first-child
+
+        span.logo
+          height: 222px
+          width: 227px
+          background: url('/images/sprite.png') 0 0/1015px no-repeat
+          background-position: 4px -45px
+
+      h2
+        font-size: 32px
+
+@media only screen and (min-width: $viewport-larger)
+
+  \:host
+
+    > div
+
+      h1
+        font-size: 110px
+        letter-spacing: 15px
+
+      &:first-child
+
+        span.logo
+          height: 222px
+          width: 227px
+          background: url('/images/sprite.png') 0 0/1015px no-repeat
+          background-position: 4px -45px
+
+      h2
+        font-size: 34px
