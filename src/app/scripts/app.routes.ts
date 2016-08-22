@@ -11,7 +11,7 @@ import { PortfolioComponent } from './components/pages/portfolio.component';
 import { ClientsComponent } from './components/pages/clients.component';
 import { ContactComponent } from './components/pages/contact.component';
 
-import { AppHeroHomeComponent } from './components/pages/aux/app-hero-home.component';
+import { AppHeroHomeComponent } from './components/pages/auxiliary/app-hero-home.component';
 
 import { CanActivateViaAssetsGuard } from './guards/assets.guards';
 

@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 import { LoadingComponent } from './loading.component';
 import { AppHeaderComponent } from './app-header.component';
 import { AppRouterComponent } from './app-router.component';
+import { HeroRouterComponent } from './pages/auxiliary/hero-router.component';
 
 import { AppResizeDirective } from '../directives/app-resize.directive';
 
@@ -18,7 +19,8 @@ import { AppResizeDirective } from '../directives/app-resize.directive';
     LoadingComponent,
     AppHeaderComponent,
     AppRouterComponent,
-    AppResizeDirective
+    AppResizeDirective,
+    HeroRouterComponent
   ],
 
   'styleUrls': [

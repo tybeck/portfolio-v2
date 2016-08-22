@@ -7,28 +7,23 @@ import {
 } from '@angular/core';
 
 import {
-  ROUTER_DIRECTIVES,
   Router,
 }  from '@angular/router';
 
 import {
   RouterTransitionService
-} from '../services/router-transition.service';
+} from '../../../services/router-transition.service';
 
 @Component({
 
-  'selector': 'app-router',
+  'selector': 'hero-router',
 
-  'templateUrl': 'views/components/app-router.html',
+  'templateUrl': 'views/components/pages/auxiliary/hero-router.html',
 
   'styleUrls': [
 
-    'styles/components/app-router.component.css'
+    'styles/outlets/hero/router.css'
 
-  ],
-
-  'directives': [
-    ROUTER_DIRECTIVES
   ],
 
   'providers': [
@@ -37,7 +32,7 @@ import {
 
 })
 
-export class AppRouterComponent implements OnInit {
+export class HeroRouterComponent implements OnInit {
 
   constructor (
     private transition: RouterTransitionService,

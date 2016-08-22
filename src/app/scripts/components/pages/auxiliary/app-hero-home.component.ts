@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 
   'selector': 'app-hero-home',
 
-  'templateUrl': 'views/components/pages/aux/app-hero-home.html',
+  'templateUrl': 'views/components/pages/auxiliary/app-hero-home.html',
 
   'styleUrls': [
 
