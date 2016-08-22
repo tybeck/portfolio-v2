@@ -1,0 +1,72 @@
+@import ../../../../variables
+@import ../../../../mixins/font
+
+@mixin services-section
+
+  div.services-section
+
+    h2
+      @include robo-light
+      margin-bottom: 30px
+
+      span
+        @include robo-bold
+
+    ul
+
+      li
+        display: block
+
+        p
+          padding: 0
+          margin: 0 10% 13px
+          text-align: center
+          font-size: 14px
+          line-height: 22px
+          width: 80%
+
+        h3
+
+          span
+            @include robo-bold
+
+          margin-top: 20px
+          margin-bottom: 10px
+          font-size: 20px
+
+        > span
+
+          margin-bottom: 13px
+
+          &.digital-marketing
+            display: block
+            background: url('/images/sprite.png') 0 0/455px no-repeat
+            background-position: -221px -108px
+            width: 92px
+            background-repeat: no-repeat
+            margin-left: auto
+            height: 78px
+            margin-right: auto
+            text-align: center
+
+          &.web-development
+            display: block
+            background: url('/images/sprite.png') 0 0/455px no-repeat
+            background-position: -105px -108px
+            width: 96px
+            background-repeat: no-repeat
+            margin-left: auto
+            height: 70px
+            margin-right: auto
+            text-align: center
+
+          &.mobile-apps
+            display: block
+            background: url('/images/sprite.png') 0 0/455px no-repeat
+            background-position: -105px -189px
+            width: 89px
+            background-repeat: no-repeat
+            margin-left: auto
+            height: 74px
+            margin-right: auto
+            text-align: center

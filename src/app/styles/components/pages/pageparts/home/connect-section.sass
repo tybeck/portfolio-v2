@@ -1,0 +1,54 @@
+@import ../../../../variables
+@import ../../../../mixins/font
+
+@mixin connect-section
+
+  div.connect-section
+
+    h2
+      @include robo-light
+      margin-bottom: 15px
+      margin-top: 25px
+      font-size: 25px
+
+      span
+        @include robo-bold
+        margin-top: 10px
+        display: block
+
+    p
+      line-height: 26px
+
+    ul
+
+      margin-top: 20px
+
+      li
+
+        float: left
+        margin-bottom: 15px
+        margin-right: 5%
+        margin-left: 5%
+        width: 40%
+
+        span
+          background: url('/images/sprite.png') 0 0/505px
+          background-repeat: no-repeat
+          display: block
+          height: 96px
+          width: 96px
+          margin-right: auto
+          margin-left: auto
+          text-align: center
+
+        &.facebook span
+          background-position: 1px -440px
+
+        &.linkedin span
+          background-position: -101px -439px
+
+        &.twitter span
+          background-position: -200px -439px
+
+        &.google span
+          background-position: -303px -439px

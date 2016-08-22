@@ -1,0 +1,38 @@
+div.contact-section
+  h2
+    | I can&nbsp;
+    span.help help you
+    span.friends or we can just be friends
+  div.container
+    form
+      ul
+        li.need.clearfix
+          label I need
+          select
+            option(value="Web Development") Web Development
+            option(value="Mobile Development") Mobile Development
+            option(value="App Development") App Development
+            option(value="Discussion") Discussion
+            option(value="Other") Other
+        li.name
+          input(
+            type="text",
+            placeholder="Name",
+            name="name"
+          )
+        li.email
+          input(
+            type="text",
+            placeholder="Email",
+            name="email"
+          )
+        li.message
+          textarea(
+            name="message",
+            placeholder="Your Message"
+          )
+        li.action
+          input(
+            type="submit",
+            value="Send"
+          )

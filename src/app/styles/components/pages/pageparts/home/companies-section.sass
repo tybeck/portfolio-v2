@@ -1,0 +1,85 @@
+@import ../../../../variables
+@import ../../../../mixins/font
+
+@mixin companies-section
+
+  div.companies-section
+    background: url('/images/bg-clients.png')
+    background-repeat: no-repeat
+    -webkit-background-size: cover
+    background-size: cover
+    background-position: center center
+    text-align: center
+    position: relative
+    min-height: 125px
+    padding-bottom: 10px
+
+    h2
+      margin-top: 0px
+      padding-top: 20px
+      margin-bottom: 0
+      font-size: 30px
+      color: #FFF
+      @include robo-light
+
+      span
+        margin-top: 10px
+        display: block
+        @include robo-bold
+
+    ul
+
+
+      li
+        margin: 25px auto
+        background: url('images/logos.png')
+        background-repeat: no-repeat
+
+        &:first-child
+          margin-top: 40px
+
+        &.sony
+          background-position: 0px 0px
+          height: 37px
+          width: 205px
+
+        &.steinmart
+          background-position: 0px -52px
+          height: 67px
+          width: 221px
+
+        &.ebay
+          background-position: 0px -255px
+          height: 63px
+          width: 166px
+
+        &.petsmart
+          background-position: 0px -143px
+          height: 49px
+          width: 205px
+          display: none
+
+        &.reactor
+          background-position: 0px -211px
+          height: 24px
+          width: 192px
+          display: none
+
+    a
+
+      &.see-all
+
+        text-transform: uppercase
+        color: #5E5F64
+        font-size: 20px
+        display: inline-block
+        margin-bottom: 30px
+
+    p
+      width: 80%
+      font-size: 13px
+      line-height: 33px
+      letter-spacing: 0.5px
+      margin: 0 auto
+      text-align: center
+      color: #5e5f64

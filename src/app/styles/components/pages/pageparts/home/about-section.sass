@@ -1,0 +1,41 @@
+@import ../../../../variables
+
+@mixin about-section
+
+  div.about-section
+
+    h2
+
+      &:first-child
+
+        &:before
+          height: 20px
+          width: 1px
+          background: #787878
+          display: block
+          content: ""
+          margin-left: auto
+          margin-right: auto
+          margin-bottom: 15px
+
+        strong
+          color: #213f9a
+          margin-left: 10px
+
+@media only screen and (min-width : $viewport-small-x)
+
+  div.about-section
+
+    h2
+
+      &:first-child
+
+        &:before
+          height: 25px
+          margin-bottom: 20px
+
+      font-size: 30px
+
+    p
+
+      font-size: 19px
