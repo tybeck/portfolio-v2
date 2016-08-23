@@ -7,13 +7,23 @@ import {
 } from '@angular/core';
 
 import {
+  Title
+} from '@angular/platform-browser';
+
+import {
   ROUTER_DIRECTIVES,
   Router,
+  Event,
+  NavigationEnd
 }  from '@angular/router';
 
 import {
   RouterTransitionService
 } from '../services/router-transition.service';
+
+import {
+  TITLES
+} from '../definitions/config';
 
 @Component({
 
@@ -32,7 +42,8 @@ import {
   ],
 
   'providers': [
-    RouterTransitionService
+    RouterTransitionService,
+    Title
   ]
 
 })
@@ -40,6 +51,7 @@ import {
 export class AppRouterComponent implements OnInit {
 
   constructor (
+    private titleService: Title,
     private transition: RouterTransitionService,
     private router: Router,
     private el: ElementRef) {
@@ -47,7 +59,30 @@ export class AppRouterComponent implements OnInit {
 
   ngOnInit () {
 
-    this.transition.subscribe(this.el, this.router);
+    let self: AppRouterComponent = <AppRouterComponent>this;
+
+    this
+      .transition
+      .subscribe(this.el, this.router);
+
+    this
+      .router
+      .events
+      .subscribe((event: Event) => {
+
+        if (event instanceof NavigationEnd) {
+
+          if (event.url && TITLES[event.url]) {
+
+            self
+              .titleService
+              .setTitle(TITLES[event.url]);
+
+          }
+
+        }
+
+      });
 
   }
 

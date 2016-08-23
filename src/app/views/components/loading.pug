@@ -1,4 +1,3 @@
-div(
-  class="app-loading-state fa fa-cog fa-spin",
-  [hidden]="!loading"
-)
+div([hidden]="!loading")
+  div.app-loading-state.fa.fa-cog.fa-spin
+  p.loading-message([innerText]="'Loading ' + dots")

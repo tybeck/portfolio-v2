@@ -1,8 +1,14 @@
 'use strict';
 
 import {
-  Component
+  Component,
+  ElementRef,
+  OnInit
 } from '@angular/core';
+
+import {
+  LoadingService
+} from '../services/loading.service';
 
 @Component({
 
@@ -14,10 +20,36 @@ import {
 
     'styles/components/app-header.component.css'
 
+  ],
+
+  'providers': [
+    LoadingService
   ]
 
 })
 
-export class AppHeaderComponent {
+export class AppHeaderComponent implements OnInit {
+
+  constructor (
+    private el: ElementRef,
+    private loadingService: LoadingService) {
+  }
+
+  ngOnInit () {
+
+    let ref: HTMLElement = <HTMLElement>this.el.nativeElement,
+
+      self: AppHeaderComponent = <AppHeaderComponent>this;
+
+    this
+      .loadingService
+      .isLoadingChanged
+      .subscribe((loading: boolean) => {
+
+        ref.classList[loading ? 'add' : 'remove']('loading');
+
+      });
+
+  }
 
 };

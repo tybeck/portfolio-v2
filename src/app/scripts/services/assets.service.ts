@@ -119,7 +119,7 @@ export class AssetsService {
           .loadAssets(assets)
             .then(function (loaded: boolean) {
 
-              setTimeout(function () {
+              setTimeout(() => {
 
                 loadingService.loading(false);
 
