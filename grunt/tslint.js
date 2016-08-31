@@ -15,7 +15,9 @@ module.exports = {
       'src': [
         '<%= paths.src %>/**/*.ts',
         '!<%= paths.src %>/**/*.d.ts',
-        '!<%= paths.app %>/**/*.ts'
+        '!<%= paths.app %>/**/*.ts',
+        '!node_modules/**',
+        '!typings/**'
       ]
 
     }
@@ -34,7 +36,9 @@ module.exports = {
 
       'src': [
         '<%= paths.app %>/**/*.ts',
-        '!<%= paths.app %>/**/*.d.ts'
+        '!<%= paths.app %>/**/*.d.ts',
+        '!node_modules/**',
+        '!typings/**'
       ]
 
     }

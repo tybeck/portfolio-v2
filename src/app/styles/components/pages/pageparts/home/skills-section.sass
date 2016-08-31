@@ -26,26 +26,42 @@
     color: #000
     text-transform: uppercase
     margin-bottom: 30px
-    margin-top: 30px
+    margin-top: 45px
     font-size: 18px
     display: inline-block
     cursor: pointer
 
-@media only screen and (min-width : $viewport-medium-xxxx)
+  @media only screen and (min-width : $viewport-medium-xxxx)
 
-  div.app-skills
+    div.app-skills
 
-    skill
+      skill
 
-      &:nth-child(n+3)
-        margin-top: 25px
+        &:nth-child(n+3)
+          margin-top: 25px
 
-      display: block
-      float: left
-      width: 50%
-      margin-top: 0
-      margin-left: 0
-      margin-right: 0
+        display: block
+        float: left
+        width: 50%
+        margin-top: 0
+        margin-left: 0
+        margin-right: 0
 
-    a.app-see-more-link
-      margin-top: 50px
+      a.app-see-more-link
+        margin-top: 50px
+
+
+  @media only screen and (min-width : $viewport-medium-xxx)
+
+    div.app-skills
+
+      div
+
+        skill
+          font-size: 15px
+          margin-right: 0
+          margin-left: 0
+          width: 50%
+
+          &:nth-child(n+3)
+            margin-top: 25px

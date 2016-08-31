@@ -14,7 +14,8 @@ import {
   ROUTER_DIRECTIVES,
   Router,
   Event,
-  NavigationEnd
+  NavigationEnd,
+  NavigationStart
 }  from '@angular/router';
 
 import {
@@ -54,7 +55,8 @@ export class AppRouterComponent implements OnInit {
     private titleService: Title,
     private transition: RouterTransitionService,
     private router: Router,
-    private el: ElementRef) {
+    private el: ElementRef,
+    private wdw: Window) {
   }
 
   ngOnInit () {
@@ -69,6 +71,14 @@ export class AppRouterComponent implements OnInit {
       .router
       .events
       .subscribe((event: Event) => {
+
+        if (event instanceof NavigationStart) {
+
+          self
+            .wdw
+            .scrollTo(0, 0);
+
+        }
 
         if (event instanceof NavigationEnd) {
 

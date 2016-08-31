@@ -32,6 +32,9 @@
           display: block
           margin-top: 5px
           line-height: 30px
+          width: 90%
+          margin-left: 5%
+          margin-right: 5%
 
     ul
 
@@ -40,16 +43,18 @@
       li
 
         margin-bottom: 10px
+        font-size: 14px
 
         label
           @include robo-light
           float: left
           text-transform: uppercase
-          width: 25%
+          margin-left: 4%
+          width: 21%
           vertical-align: middle
-          font-size: 14px
           letter-spacing: 2px
           color: #959596
+          text-align: left
 
         &.need
 
@@ -121,3 +126,62 @@
           color: #959596
           background-color: transparent
           width: 94%
+
+  @media only screen and (min-width: $viewport-small-xx)
+
+    div.contact-section
+
+      h2
+        margin-bottom: 10px
+        font-size: 28px
+
+      ul
+
+        li
+
+          font-size: 15px
+
+  @media only screen and (min-width: $viewport-medium-xxxx)
+
+    div.contact-section
+
+      h2
+        font-size: 34px
+
+        span
+
+          &.friends
+            line-height: 39px
+
+      ul
+
+        li
+
+          input,
+          select,
+          textarea
+            height: 36px
+
+          input
+
+            &[type="submit"]
+              padding: 10px 24px 32px 24px
+              font-size: 17px
+              margin-top: 10px
+
+          label
+            height: 28px
+            margin-bottom: 0
+            margin-top: 8px
+
+  @media only screen and (min-width: $viewport-medium-xxx)
+
+    div.contact-section
+
+      h2
+        font-size: 39px
+
+        span
+
+          &.friends
+            line-height: 49px

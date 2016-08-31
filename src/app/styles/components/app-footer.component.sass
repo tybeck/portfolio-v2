@@ -1,0 +1,249 @@
+@import ../mixins/font
+@import ../variables
+
+\:host
+
+  &:before
+    content: ''
+    display: block
+    background: url('/images/sprite.png')
+    background-position: 0px -431px
+    width: 173px
+    background-repeat: no-repeat
+    margin-left: auto
+    height: 174px
+    margin-right: auto
+    text-align: center
+    margin-bottom: 65px
+    margin-top: 65px
+
+  footer
+
+    ul
+      width: 90%
+      margin-left: 5%
+      margin-right: 5%
+
+      li
+        float: left
+        width: 20%
+        margin-right: 0
+        margin-left: 0
+        text-align: right
+        text-transform: uppercase
+        @include robo-light
+
+        &.home
+          text-align: left
+          width: 14%
+
+        &.about
+          width: 18%
+
+        &.portfolio
+          margin-left: 2%
+          width: 24%
+
+        &.clients
+          margin-right: 2%
+
+        a
+          color: #000
+
+        &:first-child
+          margin-left: 0
+
+        &:last-child
+          margin-right: 0
+
+    p
+      color: #000
+      @include robo-light
+      text-align: center
+      margin-bottom: 15px
+      margin-top: 10px
+
+      a
+        color: #000
+
+@media only screen and (min-width: $viewport-small-xxx)
+  
+  \:host
+  
+    footer
+  
+      ul
+  
+        li
+          margin-right: 0
+          margin-left: 0
+          width: 20%
+
+          &.home
+            text-align: left
+            width: 14%
+            
+          &.about
+            width: 18%
+            
+          &.portfolio
+            width: 26%
+            margin-left: 0
+
+          &.contact
+            text-align: right
+            margin-right: 0
+            margin-left: 2%
+            width: 20%
+
+          &.clients
+            margin-right: 0
+            margin-left: 0
+            width: 20%
+
+@media only screen and (min-width: $viewport-small-xx)
+
+  \:host
+
+    footer
+
+      ul
+
+        li
+          font-size: 15px
+
+      p
+        font-size: 15px
+
+@media only screen and (min-width: $viewport-small-x)
+
+  \:host
+
+    footer
+
+      ul
+
+        li
+          font-size: 16px
+
+      p
+      font-size: 16px
+
+@media only screen and (min-width: $viewport-small)
+
+  \:host
+
+    footer
+
+      ul
+        width: 80%
+        margin-left: 10%
+        margin-right: 10%
+
+        li
+          font-size: 17px
+
+      p
+        font-size: 17px
+
+@media only screen and (min-width: $viewport-medium-xxxx)
+
+  \:host
+
+    footer
+
+      ul
+
+        li
+          font-size: 18px
+
+      p
+        font-size: 18px
+
+@media only screen and (min-width: $viewport-medium-xx)
+
+  \:host
+
+    footer
+
+      ul
+        width: 65%
+        margin-left: 17.5%
+        margin-right: 17.5%
+
+@media only screen and (min-width: $viewport-medium-x)
+
+  \:host
+
+    footer
+
+      ul
+        width: 60%
+        margin-left: 20%
+        margin-right: 20%
+
+@media only screen and (min-width: $viewport-medium)
+
+  \:host
+
+    footer
+
+      ul
+        width: 55%
+        margin-left: 22.5%
+        margin-right: 22.5%
+
+@media only screen and (min-width: $viewport-large)
+
+  \:host
+
+    footer
+
+      ul
+        width: 50%
+        margin-left: 25%
+        margin-right: 25%
+
+@media only screen and (min-width: $viewport-larger)
+
+  \:host
+
+    footer
+
+      ul
+        width: 45%
+        margin-left: 27.5%
+        margin-right: 27.5%
+
+@media only screen and (min-width: $viewport-larger)
+
+  \:host
+
+    footer
+
+      ul
+        width: 40%
+        margin-left: 30%
+        margin-right: 30%
+
+@media only screen and (min-width: $viewport-huge)
+
+  \:host
+
+    footer
+
+      ul
+        width: 35%
+        margin-left: 32.5%
+        margin-right: 32.5%
+
+@media only screen and (min-width: $viewport-huger)
+
+  \:host
+
+    footer
+
+      ul
+        width: 30%
+        margin-left: 35%
+        margin-right: 35%
